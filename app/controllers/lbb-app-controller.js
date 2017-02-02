@@ -8,10 +8,12 @@ var lbbAppActions = {
         $state.go('home');
         $timeout(function () {
           $scope.initialize();
+          $.snackbar({content: "Drop pin to begin and click it to view photos at that location",timeout:10000});
         }, 1000);
       }
       $scope.logout = function () {
         $state.go('login');
+        $.snackbar({content: "You have been logged out !",timeout:3000});
       }
       var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       var labelIndex = 0;
@@ -20,10 +22,14 @@ var lbbAppActions = {
           lat: 20.5937
           , lng: 78.9629
         };
+        
         var map = new google.maps.Map(document.getElementById('map'), {
           center: myLatLng, //Lat and Long of India
           zoom: 15
         });
+        if(google == undefined){
+          $.snackbar({content: "Unable to load google map. Kindly Reload !",timeout:10000});
+        }
         // This event listener calls addMarker() when the map is clicked.
         $timeout(function () {
           google.maps.event.addListener(map, 'click', function (event) {
@@ -71,7 +77,7 @@ var lbbAppActions = {
           $scope.currentPage = 1;
           $scope.fetchPublicPhotos($scope.markerPosition);
           $('#photosModal').modal('show');
-          //                    infowindow.open(map, marker);
+          
         });
       };
       $timeout(function () {
@@ -105,9 +111,11 @@ var lbbAppActions = {
           }
           else {
             $scope.$broadcast('loading', false);
+            $.snackbar({content: data.message,timeout:7000});
           }
         }, function (error) {
           $scope.$broadcast('loading', false);
+          $.snackbar({content: "Unable to fetch results. Please try again",timeout:7000});
         });
       };
       $scope.mapPhotosToUrl = function () {
@@ -121,6 +129,7 @@ var lbbAppActions = {
       $scope.$on('loading', function (event, data) {
         if (data == true) {
           $scope.showLoader = true;
+          $.snackbar({content: "Please wait results are being fetched !",timeout:2000});
         }
         else {
           $scope.showLoader = false;
