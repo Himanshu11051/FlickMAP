@@ -43,6 +43,7 @@ nav .logoutDropdown {
     box-shadow: 0 2px 10px rgba(0,0,0,.2);
     top: 50px;
     left: 32px;
+    z-index: 1;
 }
 nav .logoutDropdown ul{
     padding: 10px 0px;
