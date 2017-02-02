@@ -1,3 +1,6 @@
+/* LBB App home module css file
+* @Author: Himanshu
+*/
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 body{
     font-family: "Roboto", sans-serif;
@@ -85,10 +88,14 @@ nav .logoutDropdown ul li:hover {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+.loaderDiv{
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
 .loadingBtn {
-	    position: relative;
-    top: 60px;
-    left: 235px;
+    position: relative;
+    top: 70px;
 }
 .glyphicon-refresh-animate {
     -animation: spin .7s infinite linear;

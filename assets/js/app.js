@@ -1,15 +1,20 @@
-$(document).ready(function(){
-    setTimeout(function(){  setMapHeight(); }, 1000);
-    setMapHeight();
-    
-});
-$(window).load(function(){
-    setMapHeight();
-});
-$(window).resize(function(){
+/* LBB App custom js file
+ * @Author: Himanshu
+ */
+$(document).ready(function () {
+    setTimeout(function () {
+        setMapHeight();
+    }, 1000);
     setMapHeight();
 });
-function setMapHeight(){
+$(window).load(function () {
+    setMapHeight();
+});
+$(window).resize(function () {
+    setMapHeight();
+});
+
+function setMapHeight() {
     var mapHeight = $(window).height() - 56 - 10;
-    $('#map').css('height',mapHeight);
+    $('#map').css('height', mapHeight);
 }

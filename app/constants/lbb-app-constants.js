@@ -1,3 +1,6 @@
+/* LBB App Constants File
+ * @Author: Himanshu
+ */
 var lbbAppConstants = {
   constants: function () {
     angular.module('lbbApp').constant('constants', {
