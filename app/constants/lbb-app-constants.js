@@ -4,7 +4,7 @@ var lbbAppConstants = {
       
       FLICKR_API_CONFIG : {
         METHOD: 'flickr.photos.search',
-        KEY: '84c5ed5bf712522499951598508d97ec',
+        KEY: '947046187646fc9e3c89b05ae891e822',
         PHOTOS_PER_PAGE: 12,
         PAGE_COUNT: 1,
         FORMAT:'json',
